@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'djoser',
     'gener',
-    'main'
+    'main',
+    'cipt',
 ]
 
 MIDDLEWARE = [
@@ -146,5 +147,12 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
 ]
+
+DJOSER = {
+    'SERIALIZERS': {
+        'user': 'main.serializers.UserSerializer',
+        'current_user': 'main.serializers.UserMeSerializer',
+    },
+}
 
 AUTH_USER_MODEL = 'main.User'
